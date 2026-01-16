@@ -12,11 +12,11 @@ export interface CreateStreamRequestPayload {
     /** The maximum duration in minutes for the stream creation process before timing out. */
     timeout_in_mins?: number | null;
     /** List of voice identifiers to be used in the stream. */
-    voices: number[];
+    voices?: number[];
     /** List of dictionary identifiers to be used in the stream. */
-    dictionaries: number[];
+    dictionaries?: number[];
     /** The shared configuration for the streaming pipeline. */
-    config: CambApi.ConfigStream;
+    config?: CambApi.ConfigStream;
     /** The source stream configuration details. */
     source_stream: CambApi.SourceStream;
     /** List of target stream configurations. */
