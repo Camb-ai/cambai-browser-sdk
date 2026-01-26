@@ -13,13 +13,14 @@ import type * as CambApi from "../../../../index.js";
 export interface CreateStreamTtsRequestPayload {
     text: string;
     language: CreateStreamTtsRequestPayload.Language;
-    voice_id: number;
+    voice_id?: number;
     speech_model?: CreateStreamTtsRequestPayload.SpeechModel;
     user_instructions?: string | null;
     enhance_named_entities_pronunciation?: boolean;
     output_configuration?: CambApi.StreamTtsOutputConfiguration;
     voice_settings?: CambApi.StreamTtsVoiceSettings;
     inference_options?: CambApi.StreamTtsInferenceOptions;
+    additional_body_parameters?: Record<string, any>;
 }
 
 export namespace CreateStreamTtsRequestPayload {
@@ -95,6 +96,8 @@ export namespace CreateStreamTtsRequestPayload {
         Mars8Instruct: "mars-8-instruct",
         Mars7: "mars-7",
         Mars6: "mars-6",
+        MarsFlash: "mars-flash",
+        MarsPro: "mars-pro",
     } as const;
     export type SpeechModel = (typeof SpeechModel)[keyof typeof SpeechModel];
 }
