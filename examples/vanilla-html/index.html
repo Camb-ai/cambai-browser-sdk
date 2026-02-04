@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camb.ai Browser SDK Example</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        .card { border: 1px solid #ccc; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; }
+        button { cursor: pointer; padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:disabled { background: #ccc; }
+        pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔊 Camb.ai SDK Demo</h1>
+    
+    <div class="card">
+        <h3>Configuration</h3>
+        <label>API Key: <input type="password" id="apiKey" placeholder="Enter your key"></label>
+    </div>
+
+    <div class="card">
+        <h3>Check Voices</h3>
+        <button id="checkVoicesBtn">List Voices</button>
+        <div id="status"></div>
+        <pre id="output">Results will appear here...</pre>
+    </div>
+
+    <script type="module">
+        // Import from distribution (assumes you ran 'npm run build')
+        import { CambClient } from '../../dist/index.js';
+
+        const apiKeyInput = document.getElementById('apiKey');
+        const checkBtn = document.getElementById('checkVoicesBtn');
+        const output = document.getElementById('output');
+        const status = document.getElementById('status');
+
+        checkBtn.addEventListener('click', async () => {
+            const apiKey = apiKeyInput.value;
+            if (!apiKey) {
+                alert('Please enter an API Key');
+                return;
+            }
+
+            try {
+                status.textContent = "Loading...";
+                checkBtn.disabled = true;
+
+                const client = new CambClient({ apiKey });
+                
+                // Example: List first 5 voices
+                const voices = await client.voiceCloning.listVoices();
+                
+                // Truncate for display
+                const preview = voices.slice(0, 5);
+                
+                output.textContent = JSON.stringify(preview, null, 2) + 
+                    (voices.length > 5 ? `\n\n... and ${voices.length - 5} more` : '');
+                
+                status.textContent = `✅ Success! Found ${voices.length} voices.`;
+
+            } catch (err) {
+                console.error(err);
+                status.textContent = "❌ Error: " + err.message;
+                output.textContent = JSON.stringify(err, null, 2);
+            } finally {
+                checkBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

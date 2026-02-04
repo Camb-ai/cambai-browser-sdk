@@ -1,0 +1,40 @@
+{
+    "name": "@camb-ai/browser-sdk",
+    "version": "1.0.1",
+    "description": "Official Browser SDK for Camb.ai",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "camb",
+        "ai",
+        "browser",
+        "sdk",
+        "camb.ai",
+        "text-to-speech",
+        "tts",
+        "voice-cloning",
+        "dubbing",
+        "audio-generation",
+        "speech-synthesis"
+    ],
+    "author": "Camb.ai",
+    "license": "MIT",
+    "dependencies": {
+        "url-join": "^5.0.0",
+        "form-data": "^4.0.0",
+        "qs": "^6.11.2"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.3",
+        "@types/node": "^20.10.0"
+    },
+    "files": [
+        "dist/**/*"
+    ]
+}
