@@ -1,7 +1,7 @@
 /**
  * Supported TTS providers for custom provider integration.
  * 
- * - `baseten`: Use Baseten as the TTS provider (requires mars-pro model)
+ * - `baseten`: Use Baseten as the TTS provider (requires mars-8-pro model)
  * - `vertex`: Use Google Vertex AI as the TTS provider
  */
 export const TtsProvider = {

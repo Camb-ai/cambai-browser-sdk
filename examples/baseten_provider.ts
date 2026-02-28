@@ -35,7 +35,7 @@ async function main() {
             text: "Hello World and my dear friends",
             // The Baseten provider logic converts this enum/string to lowercase matches
             language: CreateStreamTtsRequestPayload.Language.EnUs,
-            speech_model: CreateStreamTtsRequestPayload.SpeechModel.MarsFlash,
+            speech_model: CreateStreamTtsRequestPayload.SpeechModel.Mars8Flash,
             // voice_id is optional for custom providers
             additional_body_parameters: {
                 reference_audio: audioBase64,

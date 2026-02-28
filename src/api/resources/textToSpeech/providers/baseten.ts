@@ -5,7 +5,7 @@ import * as CambApi from "../../../index.js";
 /**
  * Baseten TTS provider implementation.
  * 
- * Makes a request to Baseten's mars-pro endpoint with the provided parameters.
+ * Makes a request to Baseten's mars-8-pro endpoint with the provided parameters.
  * Requires `api_key` and `mars_pro_url` in providerParams.
  * Requires `reference_audio` and `reference_language` in additional_body_parameters.
  */
@@ -14,7 +14,7 @@ export async function basetenTts(
     providerParams: Record<string, any>,
     requestOptions?: any,
 ): Promise<core.WithRawResponse<core.BinaryResponse>> {
-    // Note: Baseten provider only works with mars-pro model
+    // Note: Baseten provider only works with mars-8-pro model
     // We don't validate here since the model is optional in the request
 
     // Validate provider params

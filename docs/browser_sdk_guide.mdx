@@ -65,7 +65,7 @@ async function playSpeech() {
     text: "Hello! Welcome to Camb.ai text-to-speech.",
     language: Languages.EN_US,
     voice_id: 147320,
-    speech_model: "mars-flash",
+    speech_model: "mars-8-flash",
   });
 
   // Response is a ReadableStream or Blob depending on fetch configuration
@@ -97,7 +97,7 @@ Camb.ai offers three MARS models optimized for different use cases:
 <Tabs>
   <Tab title="MARS Flash">
     ```typescript
-    speech_model: "mars-flash"
+    speech_model: "mars-8-flash"
     ```
 
     **Best for:** Real-time voice agents, low-latency applications
@@ -106,7 +106,7 @@ Camb.ai offers three MARS models optimized for different use cases:
   </Tab>
   <Tab title="MARS Pro">
     ```typescript
-    speech_model: "mars-pro"
+    speech_model: "mars-8-pro"
     ```
 
     **Best for:** Audio production, high-quality content
@@ -115,7 +115,7 @@ Camb.ai offers three MARS models optimized for different use cases:
   </Tab>
   <Tab title="MARS Instruct">
     ```typescript
-    speech_model: "mars-instruct",
+    speech_model: "mars-8-instruct",
     user_instructions: "Speak in a warm, friendly tone"
     ```
 

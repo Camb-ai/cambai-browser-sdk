@@ -20,9 +20,9 @@ npm install @camb-ai/browser-sdk
 
 For production applications, it is **highly recommended** to route requests through a secure backend proxy:
 
-1.  Store your Camb.ai API key securely on your server (e.g., in environment variables).
-2.  Set up an endpoint on your server that forwards requests to Camb.ai and adds the `x-api-key` header.
-3.  Implement authentication on your server to control who can use the TTS services.
+1. Store your Camb.ai API key securely on your server (e.g., in environment variables).
+2. Set up an endpoint on your server that forwards requests to Camb.ai and adds the `x-api-key` header.
+3. Implement authentication on your server to control who can use the TTS services.
 
 Initialize the client to point to your proxy URL:
 
@@ -61,7 +61,7 @@ async function playSpeech() {
     text: "Hello! Welcome to Camb.ai text-to-speech.",
     language: Languages.EN_US,
     voice_id: 147320,
-    speech_model: "mars-flash",
+    speech_model: "mars-8-flash",
   });
 
   // Response is a ReadableStream or Blob depending on fetch configuration
@@ -91,7 +91,7 @@ Camb.ai offers three MARS models optimized for different use cases:
 ### MARS Flash
 
 ```typescript
-speech_model: "mars-flash"
+speech_model: "mars-8-flash"
 ```
 
 **Best for**: Real-time voice agents, low-latency applications  
@@ -100,7 +100,7 @@ speech_model: "mars-flash"
 ### MARS Pro
 
 ```typescript
-speech_model: "mars-pro"
+speech_model: "mars-8-pro"
 ```
 
 **Best for**: Audio production, high-quality content  
@@ -109,7 +109,7 @@ speech_model: "mars-pro"
 ### MARS Instruct
 
 ```typescript
-speech_model: "mars-instruct",
+speech_model: "mars-8-instruct",
 user_instructions: "Speak in a warm, friendly tone"
 ```
 
@@ -185,6 +185,6 @@ const client = new CambClient({
 
 ## Resources
 
-*   [GitHub: camb-ai/cambai-browser-sdk](https://github.com/Camb-ai/cambai-browser-sdk)
-*   [SDK Examples](https://github.com/Camb-ai/cambai-browser-sdk/tree/master/examples)
-*   [API Reference](https://docs.camb.ai/api-reference/endpoint/create-tts-stream)
+* [GitHub: camb-ai/cambai-browser-sdk](https://github.com/Camb-ai/cambai-browser-sdk)
+* [SDK Examples](https://github.com/Camb-ai/cambai-browser-sdk/tree/master/examples)
+* [API Reference](https://docs.camb.ai/api-reference/endpoint/create-tts-stream)
