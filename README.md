@@ -14,7 +14,7 @@ The official Browser SDK for interacting with [Camb.ai](https://camb.ai)'s power
 ## 📦 Installation
 
 ```bash
-npm install @camb-ai/browser-sdk@v1.0.1
+npm install @camb-ai/browser-sdk@v1.0.3
 ```
 
 ## 🔑 Authentication

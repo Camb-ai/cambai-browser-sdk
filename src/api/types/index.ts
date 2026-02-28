@@ -57,6 +57,7 @@ export * from "./TranscriptFileFormat.js";
 export * from "./TranscriptionResult.js";
 export * from "./TranslatingOption.js";
 export * from "./TranslationResult.js";
+export * from "./TtsProvider.js";
 export * from "./ValidationError.js";
 export * from "./VideoOutputTypeWithoutAvi.js";
 export * from "./VideoStream.js";

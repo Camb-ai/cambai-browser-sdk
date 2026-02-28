@@ -13,9 +13,16 @@
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "@camb-ai/browser-sdk": [
+                "./src/index.ts"
+            ]
+        }
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "examples/**/*"
     ]
 }
