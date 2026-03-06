@@ -1,5 +1,13 @@
 # Camb.ai Browser SDK
 
+<div id="top" align="center">
+
+   ![Banner](assets/banner5_720.jpg)
+   <h3>
+   <a href="https://camb.ai/"> Camb AI Website </a></h3>
+
+</div>
+
 The official Browser SDK for interacting with [Camb.ai](https://camb.ai)'s powerful voice and audio generation APIs directly from client-side applications.
 
 ## ✨ Features
