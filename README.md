@@ -78,10 +78,10 @@ async function generateSpeech() {
 ```typescript
 const response = await client.textToSpeech.tts({
   text: "[warm, friendly] Great to meet you!",
-  voice_id: 20303,
+  voice_id: 147320,
   language: Languages.EN_US,
   speech_model: "mars-8-instruct",
-  user_instructions: "Speak warmly and with enthusiasm.",
+  user_instructions: "Speak in a warm, friendly tone",
   output_configuration: { format: "wav" },
 });
 ```
