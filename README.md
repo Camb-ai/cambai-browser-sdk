@@ -59,6 +59,33 @@ async function generateSpeech() {
 }
 ```
 
+#### Streaming TTS request options
+
+`client.textToSpeech.tts(...)` accepts the core request fields plus optional controls for model behavior and output format:
+
+| Option | Description |
+| :--- | :--- |
+| `text` | Text to synthesize. For instruct models, you can include inline emotion or pacing tags. |
+| `language` | Locale such as `Languages.EN_US`. |
+| `voice_id` | Voice profile ID from the voice list APIs. |
+| `speech_model` | Model to use, such as `mars-8-instruct`, `mars-pro`, or `mars-flash`. |
+| `user_instructions` | Adds style, tone, pronunciation, or delivery guidance for the request. Available only with an instruct speech model. |
+| `output_configuration` | Output settings such as `{ format: "wav" }`. |
+| `voice_settings` | Voice behavior controls such as speaking rate, reference enhancement, or accent preservation. |
+| `inference_options` | Advanced generation controls for supported models. |
+| `enhance_named_entities_pronunciation` | Improves pronunciation for names and other named entities when supported. |
+
+```typescript
+const response = await client.textToSpeech.tts({
+  text: "[warm, friendly] Great to meet you!",
+  voice_id: 147320,
+  language: Languages.EN_US,
+  speech_model: "mars-8-instruct",
+  user_instructions: "Speak in a warm, friendly tone",
+  output_configuration: { format: "wav" },
+});
+```
+
 ### 2. End-to-End Dubbing
 
 Dub a video from one language to another.
